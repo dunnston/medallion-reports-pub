@@ -22,8 +22,11 @@ group :development do
   gem 'listen',                '3.2.1'
   gem 'spring',                '2.1.1'
   gem 'spring-watcher-listen', '2.0.1'
-  gem 'pg'
 end
+
+group :production do
+    gem 'pg'
+end 
 
 group :test do
   gem 'capybara',           '3.32.2'
