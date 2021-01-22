@@ -1,0 +1,27 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  new_client: false
+  client_on: 2021-01-19 20:56:48
+  new_money: false
+  sales_rep: MyString
+  product: MyString
+  source: MyString
+  opening_amount: 1
+  first_year_comp: 1
+  renewal_comp: 1
+  user: 
+
+two:
+  name: MyString
+  new_client: false
+  client_on: 2021-01-19 20:56:48
+  new_money: false
+  sales_rep: MyString
+  product: MyString
+  source: MyString
+  opening_amount: 1
+  first_year_comp: 1
+  renewal_comp: 1
+  user: 

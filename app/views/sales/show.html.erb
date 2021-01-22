@@ -1,0 +1,59 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @sale.name %>
+</p>
+
+<p>
+  <strong>New client:</strong>
+  <%= @sale.new_client %>
+</p>
+
+<p>
+  <strong>Client on:</strong>
+  <%= @sale.client_on %>
+</p>
+
+<p>
+  <strong>New money:</strong>
+  <%= @sale.new_money %>
+</p>
+
+<p>
+  <strong>Sales rep:</strong>
+  <%= @sale.sales_rep %>
+</p>
+
+<p>
+  <strong>Product:</strong>
+  <%= @sale.product %>
+</p>
+
+<p>
+  <strong>Source:</strong>
+  <%= @sale.source %>
+</p>
+
+<p>
+  <strong>Opening amount:</strong>
+  <%= @sale.opening_amount %>
+</p>
+
+<p>
+  <strong>First year comp:</strong>
+  <%= @sale.first_year_comp %>
+</p>
+
+<p>
+  <strong>Renewal comp:</strong>
+  <%= @sale.renewal_comp %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @sale.user %>
+</p>
+
+<%= link_to 'Edit', edit_sale_path(@sale) %> |
+<%= link_to 'Back', sales_path %>
