@@ -1,0 +1,72 @@
+<%= form_with(model: @sale) do |form| %>
+  <% if @sale.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(sale.errors.count, "error") %> prohibited this sale from being saved:</h2>
+
+      <ul>
+        <% @sale.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_field :name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :new_client %>
+    <%= form.check_box :new_client %>
+  </div>
+
+  <div class="field">
+    <%= form.label :client_on %>
+    <%= form.datetime_select :client_on %>
+  </div>
+
+  <div class="field">
+    <%= form.label :new_money %>
+    <%= form.check_box :new_money %>
+  </div>
+
+  <div class="field">
+    <%= form.label :sales_rep %>
+    <%= form.text_field :sales_rep %>
+  </div>
+
+  <div class="field">
+    <%= form.label :product %>
+    <%= form.text_field :product %>
+  </div>
+
+  <div class="field">
+    <%= form.label :source %>
+    <%= form.text_field :source %>
+  </div>
+
+  <div class="field">
+    <%= form.label :opening_amount %>
+    <%= form.number_field :opening_amount %>
+  </div>
+
+  <div class="field">
+    <%= form.label :first_year_comp %>
+    <%= form.number_field :first_year_comp %>
+  </div>
+
+  <div class="field">
+    <%= form.label :renewal_comp %>
+    <%= form.number_field :renewal_comp %>
+  </div>
+
+  <div class="field">
+    <%= form.label :user %>
+    <%= form.text_field :user %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

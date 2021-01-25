@@ -1,0 +1,19 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  lost: false
+  sale: one
+  source: one
+  rep: MyString
+  : one
+  client_on: 2021-01-22
+
+two:
+  name: MyString
+  lost: false
+  sale: two
+  source: two
+  rep: MyString
+  : two
+  client_on: 2021-01-22

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_01_22_022236) do
+ActiveRecord::Schema.define(version: 2021_01_23_005114) do
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string "namespace"
@@ -36,6 +36,19 @@ ActiveRecord::Schema.define(version: 2021_01_22_022236) do
     t.datetime "updated_at", precision: 6, null: false
     t.index ["email"], name: "index_admin_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_admin_users_on_reset_password_token", unique: true
+  end
+
+  create_table "clients", force: :cascade do |t|
+    t.string "name"
+    t.boolean "lost"
+    t.integer "source_id", null: false
+    t.integer "rep_id", null: false
+    t.date "client_on"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.date "lost_on"
+    t.index ["rep_id"], name: "index_clients_on_rep_id"
+    t.index ["source_id"], name: "index_clients_on_source_id"
   end
 
   create_table "company_locations", force: :cascade do |t|
@@ -86,6 +99,8 @@ ActiveRecord::Schema.define(version: 2021_01_22_022236) do
     t.integer "product_company_id", null: false
     t.integer "product_type_id", null: false
     t.string "product_name"
+    t.integer "client_id", null: false
+    t.index ["client_id"], name: "index_sales_on_client_id"
     t.index ["company_location_id"], name: "index_sales_on_company_location_id"
     t.index ["product_company_id"], name: "index_sales_on_product_company_id"
     t.index ["product_type_id"], name: "index_sales_on_product_type_id"
@@ -107,6 +122,9 @@ ActiveRecord::Schema.define(version: 2021_01_22_022236) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  add_foreign_key "clients", "reps"
+  add_foreign_key "clients", "sources"
+  add_foreign_key "sales", "clients"
   add_foreign_key "sales", "company_locations"
   add_foreign_key "sales", "product_companies"
   add_foreign_key "sales", "product_types"

@@ -1,0 +1,39 @@
+<h3> Total Sales: <%= @client.sales.count %> </h3>
+<h3> Client Lost: <%= @client.lost %> </h3>
+
+<h1>Sales</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Rep Name</th>
+      <th>Opening Amount</th>
+      <th>First Year Comp</th>
+      <th>Issued On </th>
+      <th>Source</th>
+      <th>Product Company</th>
+      <th>Reacurring</th>
+      <th>New Money</th>
+      <th>New Client</th>
+      <th colspan="2"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @client.sales.each do |sale|%>
+      <tr>
+        <td><%= sale.rep.name %></td>
+        <td><%= number_to_currency(sale.opening_amount) %></td>
+        <td><%= number_to_currency(sale.first_year_comp) %></td>
+        <td><%= sale.issued_on %></td>
+        <td><%= sale.source.name %></td>
+        <td><%= sale.product_company.name %></td>
+        <td><%= sale.recurring %></td>
+        <td><%= sale.new_money %></td>
+        <td><%= sale.new_client %></td>
+        <td><%= link_to "Edit", edit_admin_sale_path(sale) %></td>
+        <td><%= link_to "Destroy", sale, method: :delete, data: { confirm: "Are you sure?" } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
