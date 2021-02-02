@@ -9,7 +9,11 @@ end
 #New Clients
 
 def number_of_new_clients 
-  new_clients.count
+  new_client_group.count
+end 
+
+def new_client_group
+    new_clients.pluck(:client_id).uniq
 end 
 
 def new_clients
@@ -64,6 +68,8 @@ end
 def total_new_aum
   new_clients_aum + existing_clients_new_aum
 end 
+
+
 
 
 
