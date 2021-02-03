@@ -27,8 +27,14 @@ index do
   column :new_money
   column :rep
   column :opening_amount
+  column :first_year_comp
   column :issued_on
   column :source
+  column :recurring
+  column :company_location
+  column :product_company 
+  column :product_name
+  column :product_type
   actions
 end
 

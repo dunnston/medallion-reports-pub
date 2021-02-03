@@ -4,6 +4,34 @@ ActiveAdmin.register Client do
    permit_params :name, :lost, :source_id, :rep_id, :client_on, :lost_on
 
 
+    #Narrow filters to useful list
+  filter :name
+  filter :source
+  filter :rep
+  filter :lost_on
+  filter :client_on
+  filter :lost 
+
+  #common queries
+  scope :all
+  scope("Lost") { |scope| scope.where(lost: true) }
+
+
+index do
+  selectable_column
+  #id_column
+  column :name
+  column :rep
+  column :source
+  column :client_on
+  column :lost
+  column :lost_on
+  actions
+end
+
+
+
+
   show do
         # renders app/views/admin/clients/sales.html.erb
     render 'sales', { client: client }

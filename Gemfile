@@ -10,6 +10,7 @@ gem 'jbuilder',   '2.10.0'
 gem 'bootsnap',   '1.4.6', require: false
 gem 'activeadmin'
 gem 'devise', '~> 4.2'
+gem 'active_admin_flat_skin'
 
 
 group :development, :test do
